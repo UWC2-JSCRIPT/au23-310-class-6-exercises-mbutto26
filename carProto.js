@@ -3,27 +3,52 @@
  * @constructor
  * @param {String} model
  */
-class car {
-  constructor(currentSpeed, model) {
+class car2 {
+  constructor(model) {
     this.currentSpeed = 0;
     this.model = model;
-    // instance method
-    this.handleClick = () => {
-      console.log(`${this.currentSpeed} is 0 ${this.model} is Taurus`);
-    };
+  }
+  accelerate() {
+    this.currentSpeed++;
+  }
+  brake() {
+    this.currentSpeed--;
   }
 
-  //  Create an instance, accelerate twice, brake once, and console log the instance.toString()
   toString() {
-    return `${this.model} Taurus ${this.currentSpeed} accelerate twice`;
+    return `${this.model} has a current speed of ${this.currentSpeed}`;
   }
 }
+// instance method
 
-console.log(Taurus.toString());
+//  Create an instance, accelerate twice, brake once, and console log the instance.toString()
+
+const honda = new car2(`honda`);
+honda.accelerate();
+honda.accelerate();
+honda.brake();
+
+console.log(honda.toString());
 /**
  * ElectricCar class
  * @constructor
  * @param {String} model
  */
 
-//  Create an instance, accelerate twice, brake once, and console log the instance.toString()
+class Tesla extends Car {
+  constructor(model, maxSpeed) {
+    super("Tesla", motor, maxSpeed);
+    this.electricCar = true;
+  }
+
+  motor() {
+    this.motor = electric;
+  }
+  toString() {
+    return `electricCar${super.toString()}`;
+  }
+}
+
+const model3 = (Tesla, `3`, 140);
+
+console.log(model3.toString());
