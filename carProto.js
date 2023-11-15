@@ -35,9 +35,9 @@ console.log(honda.toString());
  * @param {String} model
  */
 
-class Tesla extends Car {
+class Tesla extends car2 {
   constructor(model, maxSpeed) {
-    super("Tesla", motor, maxSpeed);
+    super(`Tesla`, motor, maxSpeed);
     this.electricCar = true;
   }
 
@@ -49,6 +49,8 @@ class Tesla extends Car {
   }
 }
 
-const model3 = (Tesla, `3`, 140);
-
-console.log(model3.toString());
+const model4 = new Tesla(`4`, 140);
+model4.accelerate();
+model4.accelerate();
+model4.braker();
+console.log(model4.toString());
