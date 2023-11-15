@@ -3,7 +3,8 @@
 
 // Access (read) the data-color attribute of the <img>,
 // log to the console
-
+const $img = $(`img`);
+$img.attr(`data-color`);
 // Update the third <li> item ("Turbocharged"),
 // set the class name to "highlight"
 
@@ -13,3 +14,9 @@
 // Create a listener on the "Buy Now!" link that responds to a click event.
 // When clicked, the the "Buy Now!" link should be removed
 // and replaced with text that says "Added to cart"
+
+$(document).ready(function () {
+  // All of your code in here
+  // This uses jQuery, but there is a plain
+  // JavaScript way to do this as well
+});

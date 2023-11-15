@@ -45,7 +45,7 @@ class Tesla extends car2 {
     this.motor = electric;
   }
   toString() {
-    return `electricCar${super.toString()}`;
+    return `ElectricCar ${super.toString()}`;
   }
 }
 
