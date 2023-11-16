@@ -1,9 +1,9 @@
 // Create a new <a> element containing the text "Buy Now!"
 // with an id of "cta" after the last <p>
-const $newId = ($`cta`);
+const $newId = (`$cta`);
 $newId.text('Buy Now!');
 
-$('p').append($newId);
+$(`p`).append($newId);
 // Access (read) the data-color attribute of the <img>,
 // log to the console
 const $img = $(`img`);
@@ -13,8 +13,8 @@ $img.attr(`data-color`);
 
 const $li = $('li');
 const $thirdLi = $li[2];
-$thirdLi.data(`class`);
-$thirdLi.data(`class`, `highlight`);
+$thirdLi.removeClass(Turbocharged);
+$thirdLi.addClass(highlight);
   // Remove (delete) the last paragraph
   // (starts with "Available for purchase now…")
 
@@ -23,8 +23,7 @@ $('p').remove();
   // When clicked, the the "Buy Now!" link should be removed
   // and replaced with text that says "Added to cart"
 
-  .$(document)
-  .ready(function () {
+  .$(document).ready(function () {
     // All of your code in here
     // This uses jQuery, but there is a plain
     // JavaScript way to do this as well
