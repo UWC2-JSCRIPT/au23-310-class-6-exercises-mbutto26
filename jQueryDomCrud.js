@@ -1,7 +1,8 @@
 $(document).ready(function () {
   // Create a new <a> element containing the text "Buy Now!"
   // with an id of "cta" after the last <p>
-  const $newId = "Buy Now!";
+  const $newId = $("Buy Now!");
+  $newId.addattr;
   $newId.attr("id", "cta");
 
   $("p").after($newId);
@@ -9,21 +10,27 @@ $(document).ready(function () {
   // log to the console
   const $img = $(`img`);
   $img.attr(`data-color`);
+  console.log($img);
   // Update the third <li> item ("Turbocharged"),
   // set the class name to "highlight"
 
-  const $li = $("li");
+  const $li = $("<li>");
   const $thirdLi = $li[2];
   $thirdLi.removeClass(Turbocharged);
-  $thirdLi.addClass(highlight);
+  $thirdLi.addClass(`highlight`);
   // Remove (delete) the last paragraph
   // (starts with "Available for purchase now…")
 
-  $("p").last().remove();
+  $("p").remove();
 
   // Create a listener on the "Buy Now!" link that responds to a click event.
   // When clicked, the the "Buy Now!" link should be removed
   // and replaced with text that says "Added to cart"
+
+  $("$newId").click(function (e) {
+    let $this = $(this);
+    $this.replaceWith("Added to cart");
+  });
 
   // All of your code in here
   // This uses jQuery, but there is a plain
