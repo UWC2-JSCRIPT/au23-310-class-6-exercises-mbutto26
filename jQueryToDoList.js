@@ -1,33 +1,38 @@
 /**
  * Toggles "done" class on <li> element
  */
-$(document).ready(function () {
-  const list = document.getElementsByTagName("li");
-  for (var i = 0; i < list.length; i++) {
-    list[i].addEventListener("click", liClick);
-  }
-  function liClick() {
-    this.classList.toggle("done");
-  }
+const toggle = function () {
+  console.log(this);
+  $(this).toggleClass("done");
+};
+$("ul").on("click", "li", toggle);
+/**
+ * Delete element when delete link clicked
+ */
 
-  /**
-   * Delete element when delete link clicked
-   */
+const deleteParent = function () {
+  $(this).parent().remove(); // remove element which is being clicked
+};
+$("a.delete").on("click", deleteParent);
+/**
+ * Adds new list item to <ul>
+ */
+const addListItem = function (e) {
+  e.preventDefault();
+  const text = $(this).parent().find("input").val();
+  $(this).parent().find("input").val("");
 
-  $(".delete").click(function () {
-    $(this).remove(); // remove element which is being clicked
-  });
+  // rest here...
+  const li = $(`<li>`);
+  const span = document.querySelector("#new-todo") + `${text}`;
+  li.append(span);
 
-  /**
-   * Adds new list item to <ul>
-   */
-  const addListItem = function (e) {
-    e.preventDefault();
-    const text = $("input").val();
+  const deleteBtn = document.querySelector(".delete");
+  deleteBtn.click(deleteParent);
+  li.append(deleteBtn);
 
-    // rest here...
-  };
-
-  // add listener for add
-  $(document).on("click", "ul", handler);
-});
+  const ul = document.querySelector(`.today-list`);
+  ul.append(li);
+};
+// add listener for add
+$(`.add-item`).click(addListItem);
