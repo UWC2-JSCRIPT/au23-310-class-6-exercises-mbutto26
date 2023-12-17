@@ -1,38 +1,29 @@
-$(document).ready(function () {
-  // Create a new <a> element containing the text "Buy Now!"
-  // with an id of "cta" after the last <p>
-  const $newId = $("Buy Now!");
-  $newId.addattr;
-  $newId.attr("id", "cta");
+// Create a new <a> element containing the text "Buy Now!"
+// with an id of "cta" after the last <p>
 
-  $("p").after($newId);
-  // Access (read) the data-color attribute of the <img>,
-  // log to the console
-  const $img = $(`img`);
-  $img.attr(`data-color`);
-  console.log($img);
-  // Update the third <li> item ("Turbocharged"),
-  // set the class name to "highlight"
+$("p").last().after($(`<a id="cta">Buy Now!</a>`));
+// Access (read) the data-color attribute of the <img>,
+// log to the console
 
-  const $li = $("<li>");
-  const $thirdLi = $li[2];
-  $thirdLi.removeClass(Turbocharged);
-  $thirdLi.addClass(`highlight`);
-  // Remove (delete) the last paragraph
-  // (starts with "Available for purchase now…")
+console.log($("img").data("color"));
+// Update the third <li> item ("Turbocharged"),
+// set the class name to "highlight"
 
-  $("p").remove();
+$("li").eq(2).addClass(`highlight`);
+// Remove (delete) the last paragraph
+// (starts with "Available for purchase now…")
 
-  // Create a listener on the "Buy Now!" link that responds to a click event.
-  // When clicked, the the "Buy Now!" link should be removed
-  // and replaced with text that says "Added to cart"
+$("p").last().remove();
 
-  $("$newId").click(function (e) {
-    let $this = $(this);
-    $this.replaceWith("Added to cart");
-  });
+// Create a listener on the "Buy Now!" link that responds to a click event.
+// When clicked, the the "Buy Now!" link should be removed
+// and replaced with text that says "Added to cart"
 
-  // All of your code in here
-  // This uses jQuery, but there is a plain
-  // JavaScript way to do this as well
+$("#cta").click(function (e) {
+  $("#cta").after("Added to cart");
+  $("#cta").remove();
 });
+
+// All of your code in here
+// This uses jQuery, but there is a plain
+// JavaScript way to do this as well
